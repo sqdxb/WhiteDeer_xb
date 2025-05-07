@@ -1,35 +1,22 @@
 <template>
-    <el-container style="height: 500px; border: 1px solid #eee">
-        <el-header class="big-middle-container">白鹿打卡</el-header>
+    <el-container style="height: 500px;">
         <el-container>
+            <el-header class="big-middle-container">白鹿打卡</el-header>
             <el-container>
-                <el-aside width="200px" style="background-color:blue">
-                    <el-header>个人中心</el-header>
-                    <el-container>
-                        <el-main>此处展示个人信息</el-main>
-                        <el-footer>
-                            <el-button v-if="this.$store.getters.getLoginState" @click="Signout()">注销登录</el-button>
-                        </el-footer>
-                    </el-container>
-                </el-aside>
-                <el-container>
-                    <el-main>
-                        <router-view></router-view>
-                    </el-main>
-                    <el-aside width="200px" style="background-color:blue">
-
-                    </el-aside>
-                </el-container>
+                <el-main>
+                    <div class="logo">
+                        <img id="logo-img" src="../../image/bailuLOGO(45).png" alt="白鹿打卡">
+                    </div>
+                </el-main>
             </el-container>
-            <el-footer style="background-color: red;">
-                
-            </el-footer>
         </el-container>
+        <el-aside style="width: 430px; height:700px; background-color: lightblue;">
+            <router-view></router-view>
+        </el-aside>
     </el-container>
 </template>
 
 <script>
-console.log(111);
 export default{
     data(){
         return {
@@ -38,19 +25,12 @@ export default{
     },
     methods:{
         JumptoRegister(){
-            console.log("跳转至注册视图");
             this.$router.push('/register');
         },
         JumptoLogin(){
-            console.log("跳转至登录视图");
             this.$router.push('/login');
-        },
-        Signout(){
-            this.$router.push('/home/login');
-            this.$store.commit('Signout');
         }
     }
-    
 }
 </script>
 <style scoped>
@@ -58,7 +38,7 @@ export default{
     display: flex;
     justify-content: center;
     height: 100vh;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     font-family:serif;
 }
@@ -73,6 +53,20 @@ export default{
     
 }*/
 .el-main{
-    height:75vh;
+    width: 500px;
+    height:90vh;
+}
+
+
+.logo {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.logo img {
+  max-width: 500px;
+  max-height: 550px;
+  height: auto;
+  width: auto;
 }
 </style>

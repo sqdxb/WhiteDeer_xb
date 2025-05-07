@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isLogin:false
+    isLogin:false,
+    isNotFound:false
   },
   getters: {
     getLoginState(state){
       return state.isLogin;
+    },
+    getNotFoundState(state){
+      return state.isNotFound;
     }
   },
   mutations: {
@@ -18,6 +22,12 @@ export default new Vuex.Store({
     },
     Signout(state){
       state.isLogin = false;
+    },
+    NotFound(state){
+      state.isNotFound = true;
+    },
+    Found(state){
+      state.isNotFound = false;
     }
   },
   actions: {

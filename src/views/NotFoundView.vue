@@ -1,14 +1,39 @@
 <template>
-    <div class="not_found"> </div>
-</template>
-<script>
-    console.log('33333');
-</script>
-<style scoped>
-.not_found {
-    height: 100%;
-    background-color: lightpink;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='15' y='10' font-size='14' font-family='system-ui, sans-serif' text-anchor='middle' dominant-baseline='middle'%3E404%3C/text%3E%3C/svg%3E");
-    box-sizing: border-box;
-}
-</style>
+    <div class="error-page">
+        
+        <h1>404</h1>
+        <p>抱歉，你访问的页面不存在。</p>
+        <el-button type="primary" @click="goHome">返回首页</el-button>
+        </div>
+    </template>
+    
+    <script>
+    export default {
+        methods: {
+        goHome() {
+            this.$router.push('/');
+        }
+        }
+    };
+    </script>
+    
+    <style scoped>
+    .error-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 100px;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    </style>

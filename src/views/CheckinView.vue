@@ -156,7 +156,7 @@ export default {
     height: 20vh;
     padding-bottom: 39.375%; /*根据16:9宽高比计算，50% * 9 / 16 ，保持视频比例 */
     position: relative;
-    background-color: red;
+    /*background-color: red;*/
     
 }
 .video-container video {
